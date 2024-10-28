@@ -24,7 +24,7 @@ const PageNavbar = async () => {
         ))}
       </div>
       {!user ? (
-        <Button variant={"outline"}>
+        <Button variant={'secondary'}>
           <SignedOut>
             <SignInButton />
           </SignedOut>
