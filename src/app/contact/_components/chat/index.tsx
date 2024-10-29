@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { AvatarFallback } from "@radix-ui/react-avatar";
+import { cn } from "@/lib/utils";
 
 interface Message {
   id: string;
@@ -15,12 +16,15 @@ interface Message {
     imageUrl?: string; // Optional image URL field for sender
   };
   imageUrl?: string; // Optional image URL field for displaying images
+  senderId: string;
+  receiverId: string;
 }
 
-export default function ChatComponent() {
+export default function ChatComponent({ isAdmin } : { isAdmin: boolean }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [selected, setSelected] = useState('');
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -50,7 +54,7 @@ export default function ChatComponent() {
     };
 
     fetchMessages(); // Fetch messages on component mount
-  }, []);
+  });
 
   const sendMessage = async () => {
     if (!inputMessage.trim()) return;
@@ -63,7 +67,7 @@ export default function ChatComponent() {
         },
         body: JSON.stringify({
           content: inputMessage.trim(),
-          receiverClerkId: "user_2o6q3lCuOgeS1e0laM97iOm6rnY",
+          receiverClerkId: isAdmin ? selected : "cm2uluhuq001h108fwgvznwtq",
         }),
       });
 
@@ -108,7 +112,7 @@ export default function ChatComponent() {
     <div className="flex flex-col p-4 border rounded-lg shadow-md lg:w-[60rem] h-[70vh] mx-10">
       <div className="overflow-y-auto flex-grow mb-4">
         {messages.map((message) => (
-          <div key={message.id} className="flex p-2 border-b gap-4">
+          <div key={message.id} className={cn("flex p-2 border-b gap-4", isAdmin && selected === message.senderId ? "bg-secondary/80" : "")} onClick={() => setSelected(message.senderId)}>
               <Avatar>
                 {message.imageUrl && (
                   <AvatarImage
