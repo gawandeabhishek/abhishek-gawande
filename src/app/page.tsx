@@ -1,10 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 
 export default async function Home() {
-  const user = await currentUser();
-  console.log(user);
   return (
     <main className="flex xl:flex-row flex-col xl:relative items-center justify-center xl:h-[92vh] xl:gap-0 gap-10 xl:m-0 m-4">
       <div className="flex gap-10 items-center justify-center xl:absolute xl:left-4 left-auto top-10">
@@ -21,11 +18,11 @@ export default async function Home() {
         Web Developer
       </Button>
       <Image
-        src="https://avatars.githubusercontent.com/u/136836702?v=4"
+        src="/abhishek-img.jpeg"
         alt="Abhishek's Picture"
         width={400}
         height={400}
-        className="rounded-full shadow-2xl"
+        className="rounded-full shadow-2xl object-cover h-[24rem] w-[24rem]"
       />
       <div className={"xl:absolute xl:top-[30%] bottom-0 xl:right-[2%] right-auto xl:w-[30%] w-[98%] h-fit bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 xl:p-10 pl-10 pr-2 py-10 rounded-tr-2xl rounded-b-2xl"}>
         <ul

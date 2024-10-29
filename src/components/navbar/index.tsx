@@ -9,13 +9,13 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const PageNavbar = async () => {
   const user = await currentUser();
-  const navIcons = ["home", "about", "work", "skills", "contact", "chat"];
+  const navIcons = ["home", "about", "projects", "skills", "contact", "chat"];
   const Navbar = (
     <nav className="flex sm:items-center justify-between px-4 py-2 bg-transparent sm:flex-row flex-col sm:gap-0 gap-10">
       <DeveloperIcon
         fullname="abhishek gawande"
         email="abhishekgawande1667@gmail.com"
-        image="https://avatars.githubusercontent.com/u/136836702?v=4"
+        image="/abhishek-img.png"
         alt="@gawandeabhishek"
       />
       <div className="flex items-center justify-center gap-4 sm:flex-row flex-col">

@@ -13,7 +13,7 @@ import React from "react";
 const page = () => {
   const projects = [
     {
-      src: "https://avatars.githubusercontent.com/u/136836702?v=4", // Image for web development
+      src: "/web-development.jpg", // Image for web development
       title: "Web Development",
       description: "Building dynamic and responsive web applications using modern technologies.",
       badge: [
@@ -26,7 +26,7 @@ const page = () => {
       ],
     },
     {
-      src: "https://avatars.githubusercontent.com/u/136836702?v=4", // Image for mobile development
+      src: "/app-development.jpg", // Image for mobile development
       title: "Mobile Development",
       description: "Creating mobile applications using React Native for seamless user experiences.",
       badge: [
@@ -37,29 +37,7 @@ const page = () => {
       ],
     },
     {
-      src: "https://avatars.githubusercontent.com/u/136836702?v=4", // Image for dynamic programming
-      title: "Dynamic Programming Solutions",
-      description: "Implementing efficient algorithms and dynamic programming techniques to solve complex problems.",
-      badge: [
-        "Java",
-        "Algorithm Design",
-        "Backtracking",
-        "Problem Solving",
-      ],
-    },
-    {
-      src: "https://avatars.githubusercontent.com/u/136836702?v=4", // Image for your portfolio
-      title: "Portfolio Website",
-      description: "Showcasing my projects and skills as a web developer and coder.",
-      badge: [
-        "Next.js",
-        "React.js",
-        "TailwindCSS",
-        "TypeScript",
-      ],
-    },
-    {
-      src: "https://avatars.githubusercontent.com/u/136836702?v=4", // Image for AI/ML project
+      src: "/ai-ml.jpg", // Image for AI/ML project
       title: "AI & ML Projects",
       description: "Exploring AI and ML applications to create innovative solutions.",
       badge: [

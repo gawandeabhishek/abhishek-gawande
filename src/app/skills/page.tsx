@@ -7,46 +7,40 @@ const index = () => {
   // Dynamic data for skills and experience based on our chats
   const skillsData = [
     {
-      image: "https://avatars.githubusercontent.com/u/136836702?v=4", // Avatar image link
+      image: "/js.png", // Avatar image link
       alt: "JavaScript", // Alt text
       fallback: "JS", // Fallback initials
       skill: "JavaScript", // Skill title
     },
     {
-      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      image: "/reactjs.png",
       alt: "React.js",
       fallback: "R",
       skill: "React.js",
     },
     {
-      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      image: "/nextjs.png",
       alt: "Next.js",
       fallback: "N",
       skill: "Next.js",
     },
     {
-      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      image: "/nodejs.png",
       alt: "Node.js",
       fallback: "ND",
       skill: "Node.js",
     },
     {
-      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      image: "/tailwindcss.png",
       alt: "TailwindCSS",
       fallback: "T",
       skill: "TailwindCSS",
     },
     {
-      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      image: "/java.png",
       alt: "Java",
       fallback: "J",
       skill: "Java",
-    },
-    {
-      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
-      alt: "Dynamic Programming",
-      fallback: "DP",
-      skill: "Dynamic Programming",
     },
   ];
 
@@ -62,7 +56,7 @@ const index = () => {
             className="bg-transparent border-none flex items-center justify-center flex-col gap-4 shadow-none h-40"
           >
             <Avatar className="h-28 w-28">
-              <AvatarImage src={item.image} alt={item.alt} />
+              <AvatarImage src={item.image} alt={item.alt} className="object-cover h-28 w-28" />
               <AvatarFallback className="uppercase">{item.fallback}</AvatarFallback>
             </Avatar>
             <p className="text-lg font-bold text-secondary/80 text-center">

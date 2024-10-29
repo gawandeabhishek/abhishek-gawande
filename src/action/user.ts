@@ -4,7 +4,6 @@ import { currentUser } from "@clerk/nextjs/server";
 export const onAuthenticateUser = async () => {
     try {
         const user = await currentUser();
-        console.log("Current user:", user); // Add this to log the current user object
 
         if (!user) {
             return { status: 403, message: "User not authenticated" };
@@ -26,7 +25,6 @@ export const onAuthenticateUser = async () => {
                 },
             });
 
-            console.log("New user created:", newUser); // Log after user creation
             return { status: 201, user: newUser };
         }
 
