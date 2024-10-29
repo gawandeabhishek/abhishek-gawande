@@ -25,27 +25,43 @@ const PageNavbar = async () => {
           </Button>
         ))}
       </div>
-      {!user ? (
-        <Link href={'/auth/sign-in'}><Button variant={'secondary'}>
-        Sign In
-      </Button></Link>
+      <span className="md:flex hidden">{!user ? (
+        <Link href={"/auth/sign-in"}>
+          <Button variant={"secondary"}>Sign In</Button>
+        </Link>
       ) : (
         <UserButton />
-      )}
+      )}</span>
     </nav>
   );
 
-  return <div className="full">
-    <div className="md:hidden fixed my-4">
-      <Sheet>
-        <SheetTrigger asChild className="ml-2 ">
-          <Button variant={"ghost"} className="mt-[2px]"><Menu /></Button>
-        </SheetTrigger>
-        <SheetContent side={'left'} className="p-10 w-full h-full bg-transparent border-none">{Navbar}</SheetContent>
-      </Sheet>
+  return (
+    <div className="full">
+      <div className="md:hidden my-4 w-full flex items-center justify-between pr-6">
+        <Sheet>
+          <SheetTrigger asChild className="ml-2 ">
+            <Button variant={"ghost"} className="mt-[2px]">
+              <Menu />
+            </Button>
+          </SheetTrigger>
+          <SheetContent
+            side={"left"}
+            className="p-10 w-full h-full bg-transparent border-none"
+          >
+            {Navbar}
+          </SheetContent>
+        </Sheet>
+        {!user ? (
+          <Link href={"/auth/sign-in"}>
+            <Button variant={"secondary"}>Sign In</Button>
+          </Link>
+        ) : (
+          <UserButton />
+        )}
+      </div>
+      <div className="md:block hidden h-full">{Navbar}</div>
     </div>
-    <div className="md:block hidden h-full">{Navbar}</div>
-  </div>
+  );
 };
 
 export default PageNavbar;
