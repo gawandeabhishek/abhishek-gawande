@@ -7,7 +7,7 @@ export default function Home() {
       <div className="flex gap-10 items-center justify-center xl:absolute xl:left-4 left-auto top-10">
         <span className="xl:text-9xl text-5xl">👋</span>
         <div className="flex flex-col xl:gap-4 gap-2">
-          <p className="xl:text-xl text-xs text-primary/70">Hello, I am</p>
+          <p className="xl:text-xl text-xs text-secondary/70">Hello, I am</p>
           <h3 className="xl:text-5xl text-xl">Abhishek</h3>
         </div>
       </div>
