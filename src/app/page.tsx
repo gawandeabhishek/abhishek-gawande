@@ -1,4 +1,6 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { FileText } from "lucide-react";
 import Image from "next/image";
 
 export default async function Home() {
@@ -11,6 +13,15 @@ export default async function Home() {
           <h3 className="xl:text-5xl text-xl">Abhishek</h3>
         </div>
       </div>
+      <a href="/resume.pdf" download>
+        <Badge
+          className="flex items-center justify-center gap-4 text-4xl px-6 py-4 xl:absolute xl:right-[20%] top-[10%]"
+          variant={"secondary"}
+        >
+          <FileText size={40} />
+          <p className="font-normal">Resume</p>
+        </Badge>
+      </a>
       <Button
         variant={"secondary"}
         className="xl:absolute top-[30%] left-[10%] xl:text-4xl text-2xl xl:px-10 xl:py-12 px-5 py-6"
@@ -24,7 +35,11 @@ export default async function Home() {
         height={400}
         className="rounded-full shadow-2xl object-cover h-[24rem] w-[24rem]"
       />
-      <div className={"xl:absolute xl:top-[30%] bottom-0 xl:right-[2%] right-auto xl:w-[30%] w-[98%] h-fit bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 xl:p-10 pl-10 pr-2 py-10 rounded-tr-2xl rounded-b-2xl"}>
+      <div
+        className={
+          "xl:absolute xl:top-[30%] bottom-0 xl:right-[2%] right-auto xl:w-[30%] w-[98%] h-fit bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 xl:p-10 pl-10 pr-2 py-10 rounded-tr-2xl rounded-b-2xl"
+        }
+      >
         <ul
           role="list"
           className="marker:text-sky-400 list-disc flex flex-col gap-6"
