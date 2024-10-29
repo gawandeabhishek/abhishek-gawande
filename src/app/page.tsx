@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  const user = await currentUser();
+  console.log(user);
   return (
     <main className="flex xl:flex-row flex-col xl:relative items-center justify-center xl:h-[92vh] xl:gap-0 gap-10 xl:m-0 m-4">
       <div className="flex gap-10 items-center justify-center xl:absolute xl:left-4 left-auto top-10">

@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import DeveloperIcon from "../global/developer-icon";
 import { Button } from "../ui/button";
-import { SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -26,11 +26,9 @@ const PageNavbar = async () => {
         ))}
       </div>
       {!user ? (
-        <Button variant={'secondary'}>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-        </Button>
+        <Link href={'/auth/sign-in'}><Button variant={'secondary'}>
+        Sign In
+      </Button></Link>
       ) : (
         <UserButton />
       )}

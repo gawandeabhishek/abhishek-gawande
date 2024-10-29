@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Ensure this environment variable is properly set
+}
+
+model User {
+  id                 String    @id @default(cuid())  // Unique ID for each user
+  clerkId            String    @unique               // Clerk's unique user ID
+  name               String?                        // Optional field for user's name
+  email              String?                        // Optional field for user's email
+
+  // Relation to messages sent by the user
+  sentMessages       Message[] @relation("SenderMessages")
+
+  // Relation to messages received by the user
+  receivedMessages   Message[] @relation("ReceiverMessages")
+}
+
+model Message {
+  id         String   @id @default(cuid())           // Unique ID for each message
+  content    String                               // Message content
+  senderId   String                               // Foreign key to the User (sender)
+  imageUrl   String?                              // Optional field for image URL
+  receiverId String                               // Foreign key to the User (receiver)
+  createdAt  DateTime @default(now())              // Timestamp for when the message was created
+  
+  // Relation to the sender of the message (links to User via senderId)
+  sender     User     @relation("SenderMessages", fields: [senderId], references: [id])
+  
+  // Relation to the receiver of the message (links to User via receiverId)
+  receiver   User     @relation("ReceiverMessages", fields: [receiverId], references: [id])
+}
