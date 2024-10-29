@@ -107,8 +107,6 @@ export async function POST(request: Request) {
       },
     });
 
-    console.log(message)
-
     return NextResponse.json({ message, status: "success" }); // Return a success response with the message
   } catch (error) {
     console.error("Error sending message:", error);

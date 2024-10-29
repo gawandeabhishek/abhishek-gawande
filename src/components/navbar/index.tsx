@@ -4,12 +4,12 @@ import DeveloperIcon from "../global/developer-icon";
 import { Button } from "../ui/button";
 import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
-import { Menu } from "lucide-react";
+import { Menu, MessagesSquare } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const PageNavbar = async () => {
   const user = await currentUser();
-  const navIcons = ["home", "about", "work", "skills", "contact"];
+  const navIcons = ["home", "about", "work", "skills", "contact", "chat"];
   const Navbar = (
     <nav className="flex sm:items-center justify-between px-4 py-2 bg-transparent sm:flex-row flex-col sm:gap-0 gap-10">
       <DeveloperIcon
@@ -21,7 +21,7 @@ const PageNavbar = async () => {
       <div className="flex items-center justify-center gap-4 sm:flex-row flex-col">
         {navIcons.map((icon) => (
           <Button key={icon}>
-            <Link href={icon === "home" ? "/" : `/${icon}`}>{icon}</Link>
+            <Link href={icon === "home" ? "/" : `/${icon}`} className="flex gap-4 items-center justify-center">{icon === "chat" ? (<><MessagesSquare /> <span className="lg:flex hidden">{icon}</span></>) : <>{icon}</>}</Link>
           </Button>
         ))}
       </div>

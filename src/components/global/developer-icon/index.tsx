@@ -25,7 +25,7 @@ const DeveloperIcon = ({ fullname, email, image, alt, className }: Props) => {
       </Avatar>
       <div className="flex flex-col items-start justify-center">
         <h3 className="text-sm capitalize">{fullname}</h3>
-        <p className="text-xs">{email}</p>
+        <p className="text-xs truncate lg:w-auto w-20">{email}</p>
       </div>
     </Button>
   );
