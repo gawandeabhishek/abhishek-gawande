@@ -4,6 +4,7 @@ import "./globals.css";
 import PageNavbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
+import StarsCanvas from "@/components/global/stars";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +32,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased transition-all`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased transition-all bg-transparent`}
         >
           <ThemeProvider
             attribute="class"
@@ -41,6 +42,7 @@ export default function RootLayout({
           >
             <PageNavbar />
             {children}
+            <StarsCanvas />
           </ThemeProvider>
         </body>
       </html>
