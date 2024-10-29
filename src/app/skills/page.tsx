@@ -1,9 +1,78 @@
-import React from 'react'
+import { Avatar } from "@/components/ui/avatar";
+import { Card } from "@/components/ui/card";
+import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import React from "react";
 
 const index = () => {
-  return (
-    <div>index</div>
-  )
-}
+  // Dynamic data for skills and experience based on our chats
+  const skillsData = [
+    {
+      image: "https://avatars.githubusercontent.com/u/136836702?v=4", // Avatar image link
+      alt: "JavaScript", // Alt text
+      fallback: "JS", // Fallback initials
+      skill: "JavaScript", // Skill title
+    },
+    {
+      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      alt: "React.js",
+      fallback: "R",
+      skill: "React.js",
+    },
+    {
+      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      alt: "Next.js",
+      fallback: "N",
+      skill: "Next.js",
+    },
+    {
+      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      alt: "Node.js",
+      fallback: "ND",
+      skill: "Node.js",
+    },
+    {
+      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      alt: "TailwindCSS",
+      fallback: "T",
+      skill: "TailwindCSS",
+    },
+    {
+      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      alt: "Java",
+      fallback: "J",
+      skill: "Java",
+    },
+    {
+      image: "https://avatars.githubusercontent.com/u/136836702?v=4",
+      alt: "Dynamic Programming",
+      fallback: "DP",
+      skill: "Dynamic Programming",
+    },
+  ];
 
-export default index
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <h3 className="sm:text-5xl text-3xl font-bold mb-2 text-center sm:py-8 py-12">
+        Skills & Experience
+      </h3>
+      <div className="flex flex-wrap justify-center gap-20 lg:w-[60rem]">
+        {skillsData.map((item, index) => (
+          <Card
+            key={index}
+            className="bg-transparent border-none flex items-center justify-center flex-col gap-4 shadow-none h-40"
+          >
+            <Avatar className="h-28 w-28">
+              <AvatarImage src={item.image} alt={item.alt} />
+              <AvatarFallback className="uppercase">{item.fallback}</AvatarFallback>
+            </Avatar>
+            <p className="text-lg font-bold text-secondary/80 text-center">
+              {item.skill}
+            </p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default index;
