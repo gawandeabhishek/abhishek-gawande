@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
@@ -22,7 +23,8 @@ const page = () => {
         "API",
         "TailwindCSS",
       ],
-      timeline: "March 2024 - Working"
+      timeline: "March 2024 - Working",
+      href: "https://github.com/gawandeabhishek/chordly"
     },
   ];
 
@@ -33,6 +35,7 @@ const page = () => {
       </h3>
       <div className="flex flex-wrap items-center sm:justify-start justify-center gap-8 w-fit">
         {projects.map((item, index) => (
+          <Link href={item.href}>
           <Card
             key={index}
             className="w-fit h-[34rem] py-4 bg-transparent flex flex-col items-start justify-start border-none"
@@ -63,6 +66,7 @@ const page = () => {
               ))}
             </CardFooter>
           </Card>
+          </Link>
         ))}
       </div>
     </div>

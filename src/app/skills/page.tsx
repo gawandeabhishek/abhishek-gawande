@@ -47,7 +47,7 @@ const index = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <h3 className="sm:text-5xl text-3xl font-bold mb-2 text-center sm:py-8 py-12">
-        Skills & Experience
+        Skills
       </h3>
       <div className="flex flex-wrap justify-center gap-20 lg:w-[60rem]">
         {skillsData.map((item, index) => (
@@ -59,7 +59,7 @@ const index = () => {
               <AvatarImage src={item.image} alt={item.alt} className="object-cover h-28 w-28" />
               <AvatarFallback className="uppercase">{item.fallback}</AvatarFallback>
             </Avatar>
-            <p className="text-lg font-bold text-secondary/80 text-center">
+            <p className="text-lg font-bold dark:text-secondary/80 text-primary text-center">
               {item.skill}
             </p>
           </Card>
