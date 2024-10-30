@@ -18,7 +18,7 @@ const page = () => {
       title: "Chordly",
       description: "Responsive music web project with API integration.",
       badge: ["React.js", "API", "TailwindCSS"],
-      timeline: "March 2024 - Working",
+      timeline: "March 2024 - October 2024",
       href: "https://github.com/gawandeabhishek/chordly",
     },
   ];
