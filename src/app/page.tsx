@@ -33,7 +33,7 @@ export default async function Home() {
         alt="Abhishek's Picture"
         width={400}
         height={400}
-        className="rounded-full shadow-2xl object-cover h-[24rem] w-[24rem]"
+        className="rounded-full shadow-2xl object-cover sm:h-[24rem] sm:w-[24rem] h-[14rem] w-[14rem]"
       />
       <div
         className={
