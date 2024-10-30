@@ -13,7 +13,7 @@ export default async function Home() {
           <h3 className="xl:text-5xl text-xl">Abhishek</h3>
         </div>
       </div>
-      <a href="/resume.pdf" download>
+      <a href="/abhishek-gawande_resume.pdf" download>
         <Badge
           className="flex items-center justify-center gap-4 text-4xl px-6 py-4 xl:absolute xl:right-[20%] top-[10%]"
           variant={"secondary"}
