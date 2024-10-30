@@ -112,7 +112,7 @@ export default function ChatComponent({ isAdmin } : { isAdmin: boolean }) {
     <div className="flex flex-col p-4 border rounded-lg shadow-md lg:w-[60rem] h-[70vh] mx-4">
       <div className="overflow-y-auto flex-grow mb-4">
         {messages.map((message) => (
-          <div key={message.id} className={cn("flex p-2 border-b gap-4", isAdmin && selected === message.senderId ? "bg-secondary/80" : "")} onClick={() => setSelected(message.senderId)}>
+          <div key={message.id} className={cn("flex p-2 gap-4", isAdmin && selected === message.senderId ? "bg-secondary/80" : "")} onClick={() => setSelected(message.senderId)}>
               <Avatar>
                 {message.imageUrl && (
                   <AvatarImage
