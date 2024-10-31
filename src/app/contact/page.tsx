@@ -1,11 +1,13 @@
-"use client"
-
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { CIcon } from '@coreui/icons-react'
-import { cibLeetcode } from '@coreui/icons'
+import { Metadata } from "next";
+import LeetCodeIcon from "@/components/global/leetcode-icon";
+
+export const metadata: Metadata = {
+  title: "Contact Abhishek Gawande"
+}
 
 const page = () => {
   return (
@@ -38,7 +40,7 @@ const page = () => {
             href="https://leetcode.com/u/programmerboyabhi/"
             className="flex gap-2 items-center justify-center"
           >
-            <CIcon icon={cibLeetcode} className="h-6 w-6"/> LeetCode
+            <LeetCodeIcon /> LeetCode
           </Link>
         </Badge>
       </div>

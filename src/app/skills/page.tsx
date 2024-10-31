@@ -1,7 +1,12 @@
 import { Avatar } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Contact Abhishek Gawande"
+}
 
 const index = () => {
   // Dynamic data for skills and experience based on our chats

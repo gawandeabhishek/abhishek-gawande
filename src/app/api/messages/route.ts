@@ -2,9 +2,6 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
 
-// Define the admin's Clerk user ID
-const ADMIN_CLERK_ID = "user_2o6q3lCuOgeS1e0laM97iOm6rnY"; // Replace with your actual admin ID
-
 export async function GET() {
   const clerkUser = await currentUser(); // Get the logged-in user from Clerk
 
@@ -16,7 +13,7 @@ export async function GET() {
     let messages;
 
     // If the logged-in user is the admin, fetch all messages
-    if (clerkUser.id === ADMIN_CLERK_ID) {
+    if (clerkUser.id === process.env.ADMIN_CLERK_ID) {
       messages = await db.message.findMany({
         include: {
           sender: {
