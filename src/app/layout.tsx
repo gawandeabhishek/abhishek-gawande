@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, // Replace with your actual verification token
   },
+  icons: {
+    icon: "/favicon.ico", // Reference to the favicon
+  },
 };
 
 export default function RootLayout({
