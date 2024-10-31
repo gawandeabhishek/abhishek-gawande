@@ -11,11 +11,12 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Theme from "./theme";
 
 const PageNavbar = async () => {
   const user = await currentUser();
   const navIcons = ["home", "about", "projects", "skills", "contact", "chat"];
-  
+
   const Navbar = (
     <nav className="flex sm:items-center justify-between px-4 py-2 bg-transparent sm:flex-row flex-col sm:gap-0 gap-10">
       <DeveloperIcon
@@ -43,7 +44,7 @@ const PageNavbar = async () => {
           </Button>
         ))}
       </div>
-      <span className="md:flex hidden">
+      <span className="md:flex hidden items-center justify-center gap-4">
         {!user ? (
           <Link href={"/auth/sign-in"}>
             <Button variant={"secondary"}>Sign In</Button>
@@ -51,6 +52,7 @@ const PageNavbar = async () => {
         ) : (
           <UserButton />
         )}
+        <Theme />
       </span>
     </nav>
   );
@@ -108,13 +110,16 @@ const PageNavbar = async () => {
             </nav>
           </SheetContent>
         </Sheet>
-        {!user ? (
-          <Link href={"/auth/sign-in"}>
-            <Button variant={"secondary"}>Sign In</Button>
-          </Link>
-        ) : (
-          <UserButton />
-        )}
+        <span className="flex items-center justify-center gap-4">
+          {!user ? (
+            <Link href={"/auth/sign-in"}>
+              <Button variant={"secondary"}>Sign In</Button>
+            </Link>
+          ) : (
+            <UserButton />
+          )}
+          <Theme />
+        </span>
       </div>
       <div className="md:block hidden h-full">{Navbar}</div>
     </div>

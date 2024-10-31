@@ -4,7 +4,7 @@ import "./globals.css";
 import PageNavbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
-import StarsCanvas from "@/components/global/stars";
+import Background from "@/components/background";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -55,7 +55,7 @@ export default function RootLayout({
           >
             <PageNavbar />
             {children}
-            <StarsCanvas />
+            <Background />
           </ThemeProvider>
         </body>
       </html>
