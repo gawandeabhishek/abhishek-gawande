@@ -1,7 +1,7 @@
 import React from "react";
 import { onAuthenticateUser } from "@/action/user";
 import { redirect } from "next/navigation";
-import ChatComponent from "./_components/chat";
+import ChatComponent from "./chats";
 import { currentUser } from "@clerk/nextjs/server";
 import { Metadata } from "next";
 
