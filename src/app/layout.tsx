@@ -26,8 +26,11 @@ export const metadata: Metadata = {
   description:
     "Abhishek Gawande - Web and App Developer specializing in React.js, Next.js, and AI-driven solutions. Passionate about dynamic programming, modern UI/UX with Tailwind CSS, and optimized algorithms. Blending creativity with problem-solving.",
   twitter: {
-    card: "summary_large_image"
-  }
+    card: "summary_large_image",
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, // Replace with your actual verification token
+  },
 };
 
 export default function RootLayout({
