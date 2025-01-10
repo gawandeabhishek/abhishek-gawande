@@ -26,6 +26,14 @@ const page = () => {
       timeline: "March 2024 - October 2024",
       href: "https://github.com/gawandeabhishek/chordly",
     },
+    {
+      src: "/vibewave.png", // Image for web development
+      title: "VibeWave",
+      description: "New version of Chordly with backend",
+      badge: ["Next.js", "API", "TailwindCSS", "Shadcn/UI", "Prisma"],
+      timeline: "Nov 2024 - Nov 2024",
+      href: "https://github.com/gawandeabhishek/vibewave/",
+    },
   ];
 
   return (
