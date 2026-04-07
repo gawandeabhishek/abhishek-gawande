@@ -22,7 +22,7 @@ export default function Menubar() {
   const navItems = ["File", "View", "Projects", "Contact"];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-7 bg-black/80 backdrop-blur border-b border-white/10 flex items-center justify-between px-4 text-xs font-medium">
+    <header className="fixed top-0 left-0 right-0 z-50 h-7 bg-black/80 backdrop-blur border-b border-white/10 flex items-center justify-between px-4 text-xs font-medium select-none">
       <div className="flex items-center gap-5">
         <span className="text-white/60 text-sm">&#63743;</span>
         <span className="text-white font-semibold tracking-wide">Portfolio</span>
