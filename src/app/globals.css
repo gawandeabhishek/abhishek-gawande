@@ -53,10 +53,10 @@ body::before {
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #000; }
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: #E8FF00; }
+::-webkit-scrollbar-thumb:hover { background: #1447E6; }
  
 /* Selection */
-::selection { background: #E8FF00; color: #000; }
+::selection { background: #1447E6; color: #000; }
  
 @layer utilities {
   .animate-delay-100 { animation-delay: 0.1s; }
