@@ -13,7 +13,7 @@ export default function Dock() {
       <div className="flex items-end gap-1.5 bg-black/30 backdrop-blur-xl rounded-2xl px-3 py-2.5">
         {dockItems.map((item, i) =>
           item === null ? (
-            <div key={`sep-${i}`} className="w-px h-full py-2 bg-white/10 mx-1" />
+            <div key={`sep-${i}`} className="w-px self-stretch my-2 bg-white/10 mx-1" />
           ) : (
             <a
               key={item.title}
