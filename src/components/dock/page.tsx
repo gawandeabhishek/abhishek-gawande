@@ -10,7 +10,7 @@ const dockItems = [
 export default function Dock() {
   return (
     <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50">
-      <div className="flex items-end gap-1.5 bg-black/30 backdrop-blur-xl rounded-2xl px-3 py-2.5">
+      <div className="flex items-end gap-1.5 bg-gray-900/20 backdrop-blur-md rounded-2xl px-3 py-2.5">
         {dockItems.map((item, i) =>
           item === null ? (
             <div key={`sep-${i}`} className="w-px self-stretch my-2 bg-white/10 mx-1" />
@@ -21,7 +21,7 @@ export default function Dock() {
               target="_blank"
               rel="noopener noreferrer"
               title={item.title}
-              className="w-11 h-11 rounded-xl bg-black/30 backdrop-blur-xl flex items-center justify-center text-xl
+              className="w-11 h-11 rounded-xl bg-gray-900/20 backdrop-blur-md flex items-center justify-center text-xl
                 hover:-translate-y-4 hover:scale-110 hover:bg-blue-700/10
                 transition-all duration-150 ease-out"
             >
